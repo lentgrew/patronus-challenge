@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  shutdown: graceful
+spring:
+  application:
+    name: patronus
+  datasource:
+    url: jdbc:postgresql://db:5432/postgres?currentSchema=patronus
+    username: postgres
+    password: postgres
+  flyway:
+    locations: 'classpath:/db/migrations'
+    schemas: patronus
+    enabled: true
+  jpa:
+    open-in-view: true
+    show-sql: true
+
+logging:
+  level:
+    root: INFO
+    org.patronus.soft: DEBUG
+    org.springframework: INFO
+    org.hibernate: ERROR
+    org.flywaydb: TRACE

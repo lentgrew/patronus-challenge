@@ -1,5 +1,28 @@
 # Patronus Service
 
+### Backend Coding Challenge
+### Intro
+The task is to create a small SpringBoot application that will have the following endpoints.
+1. Create a device with
+   *  Serial number (String)
+   *  UUID
+   *  Phone number
+   *  Model (string)
+2. Create a user with:
+   *  First name
+   *  Last name
+   *  Address
+   *  Birthday
+3. Assign a device to a user
+4. List all users with devices assigned to them
+   Technology
+   *  SpringBoot with Kotlin
+   *  For the simplicity, H2 DB could be used
+#### Additional Notes
+      The application needs to have corresponding unit tests.
+      Clean Architecture and SOLID principles are welcome.
+      Code should be in the git repo accessible to the Patronus' team members
+
 ### Prerequisites
 
 This repository was builded using the following technologies:

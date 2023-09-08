@@ -1,0 +1,27 @@
+version: "3.0"
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - spring-cloud-network
+  patronus:
+    container_name: app-patronus
+    build:
+      dockerfile: Dockerfile
+    image: app-patronus:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
