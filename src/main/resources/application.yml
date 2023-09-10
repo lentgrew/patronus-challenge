@@ -10,12 +10,15 @@ spring:
     password: postgres
   flyway:
     locations: 'classpath:/db/migrations'
-    schemas: patronus
+    schemas: [patronus]
     enabled: true
   jpa:
     open-in-view: true
     show-sql: true
-
+    properties:
+      hibernate:
+        type:
+          preferred_uuid_jdbc_type: CHAR
 logging:
   level:
     root: INFO

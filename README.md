@@ -15,7 +15,7 @@ The task is to create a small SpringBoot application that will have the followin
    *  Birthday
 3. Assign a device to a user
 4. List all users with devices assigned to them
-   Technology
+#### Technology
    *  SpringBoot with Kotlin
    *  For the simplicity, H2 DB could be used
 #### Additional Notes
@@ -31,7 +31,7 @@ This repository was builded using the following technologies:
 * Spring Boot 2.7.13
 * Gradle 8.1.1
 
-Having the JDK 11, Docker, Docker compose are mandatory to be able to build and run the App.
+Having the JDK 17, Docker, Docker compose are mandatory to be able to build and run the App.
 
 ### Build
 
@@ -62,3 +62,6 @@ Alternative:
 
 * The app will deploy by default in the `port:8080` so please make sure to have it free or change it
   before compilation inside the `application.yml` config file.
+* The app has `SwaggerUI` configured for testing you can access the swagger in the
+  route: http://localhost:8080/swagger-ui/index.html
+    * be aware of the port in case you change it in the steps above.
