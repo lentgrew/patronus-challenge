@@ -2,6 +2,7 @@ package org.patronus.soft.entity
 
 import jakarta.persistence.*
 import org.hibernate.annotations.UuidGenerator
+import java.time.LocalDate
 import java.util.*
 
 @Entity
@@ -13,7 +14,7 @@ data class UserEntity(
     val id: UUID? = null,
     val firstName: String,
     val lastName: String,
-    val birthday: Date,
+    val birthday: LocalDate,
     val address: String? = null,
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)

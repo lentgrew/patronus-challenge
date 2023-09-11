@@ -8,4 +8,5 @@ import java.util.UUID
 @Repository
 interface DeviceRepository: JpaRepository<DeviceEntity, UUID>{
     fun countByUuid(uuid: UUID): Long
+    fun findFirstByUuid(deviceUUID: UUID): DeviceEntity?
 }

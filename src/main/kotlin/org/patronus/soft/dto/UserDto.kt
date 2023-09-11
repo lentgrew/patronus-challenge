@@ -1,6 +1,7 @@
 package org.patronus.soft.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
+import java.time.LocalDate
 import java.util.*
 
 data class UserDto(
@@ -8,6 +9,6 @@ data class UserDto(
     val firstName: String,
     val lastName: String,
     @JsonFormat(pattern="yyyy-MM-dd")
-    val birthday: Date,
+    val birthday: LocalDate,
     val address: String? = null
 )

@@ -2,6 +2,7 @@ package org.patronus.soft.service
 
 import org.patronus.soft.dto.UserDetailsDto
 import org.patronus.soft.dto.UserDto
+import org.patronus.soft.entity.UserEntity
 import org.patronus.soft.mapper.toDto
 import org.patronus.soft.mapper.toEntity
 import org.patronus.soft.exception.UserException
@@ -10,6 +11,7 @@ import org.patronus.soft.repository.UserRepository
 import org.patronus.soft.service.interfaces.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
 class UserServiceImpl(
@@ -26,5 +28,9 @@ class UserServiceImpl(
 
     override fun getUsers(): List<UserDetailsDto> {
         return userRepository.findAll().map { it.toDetailsDto() }
+    }
+
+    override fun findUser(userId: UUID): UserEntity? {
+        return userRepository.findFirstById(userId)
     }
 }
